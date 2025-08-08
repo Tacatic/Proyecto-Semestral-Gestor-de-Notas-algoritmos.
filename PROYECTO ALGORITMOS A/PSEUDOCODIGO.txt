@@ -1,0 +1,32 @@
+Inicio 
+Menu <- Verdadero
+Mientras Menu Hacer
+	Imprimir "Menú Principal"
+	Imprimir "1 Agregar cursos y notas"
+	Imprimir "2 Ver curso y nota"
+	Imprimir "3 Calcular Promedio"
+	Imprimir "4 Ver cuantos cursos están aprobados y cuantos están reprobados"
+	Imprimir "5 Buscar curso por nombre"
+	Imprimir "6 Modificar nota del curso"
+	Imprimir "7 Salir"
+	Leer opciones
+SI opciones == 1 entonces 
+     	<Agregar curso>
+SINO SI opciones == 2 entonces 
+     	<Ver cursos guardados>
+SINO SI opciones == 3 entonces 
+     	<Calcular promedio>
+SINO SI opciones == 4 entonces 
+	<Mostrar cursos aprobados y reprobados>
+SINO SI opciones == 5 entonces
+	<Buscar curso>
+SINO SI opciones == 6 entonces 
+	<Modificar nota>
+SINO SI opciones == 7 entonces 
+	Imprimir “Salir”
+opciones <- FALSO 
+SINO 
+	Imprimir “La opciones que intentas no es valida ”
+FIN SI 
+FIN MIENTRAS 
+FIN 
