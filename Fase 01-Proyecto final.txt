@@ -1,3 +1,0 @@
-Redacción del Problema
-
-El objetivo de este proyecto es desarrollar un sistema que opere desde la consola (pantalla negra donde se escribe) para que un estudiante pueda registrar y gestionar sus calificaciones de manera organizada. No se trata únicamente de almacenar información, sino también de analizarla y aplicar los conocimientos adquiridos en clase sobre python.
