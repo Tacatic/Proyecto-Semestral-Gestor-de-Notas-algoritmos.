@@ -1,0 +1,33 @@
+INICIO 
+Escribir "¿Cuantas notas desea ingresar?"
+Leer N
+
+Si Nota <= 0 Entonces
+	Escribir "Debe ingresar al menos una nota"
+Fin Si
+
+Para i Desde 1 Hasta N Hacer
+	Repetir
+		Escribir "Ingrese la nota". i
+		Leer nota
+
+Si nota Es Vacia O nota No es numérica Entonces
+	Escribir "La nota debe se un numero valido"
+	VALIDO ← FALSO
+Sino
+	Agregar nota A lista_nota
+	VALIDO ← VERDADERO
+Fin Si
+Hasta QUE VALIDO = VERDADERO
+Fin Para
+
+Suma ← 0
+Para cada elemto en lista_nota Hacer
+	Suma ← Suma + elemento
+Fin Para
+
+PROMEDIO ← SUMA / N
+
+Escribir "El promedio de la nota es:", PROMEDIO
+
+Fin
