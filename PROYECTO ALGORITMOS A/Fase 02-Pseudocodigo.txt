@@ -14,7 +14,7 @@ Fin Si
 		//Bucle para registrar cada nota.
 Para i Desde 1 Hasta N Hacer
 	Repetir
-		Escribir "Ingrese la nota". i
+		Escribir "Ingrese la nota", i
 		Leer nota
 
 		//Validación, la nota no debe estar vacía y debe ser numérica.
