@@ -1,5 +1,6 @@
-#FUNCIONES
+# ===== FUNCIONES ===== #
 
+## Esta funcion es para registrar un nuevo curso con su respectiva nota ##
 def registrar_curso(cursos):
     nombre = input("Ingrese el nombre del curso: ")
     while nombre.strip() == "":
@@ -13,7 +14,8 @@ def registrar_curso(cursos):
     
     cursos.append((nombre, int(nota)))
     print("Curso registrado con exito")
-    
+
+## Esta funcion permite mostrar los cursos y notas que hemos registrado ##    
 def mostrar_cursos(cursos):
     if not cursos:
         print("No hay cursos registrados.")
@@ -22,13 +24,15 @@ def mostrar_cursos(cursos):
         for i, (curso, nota) in enumerate(cursos, start=1):
             print(f"{i}. {curso} - Nota: {nota}")        
 
+## Esta funcion permite realizar una suma de las notas para poder dar un promedio de ellas ##
 def promedio_notas(cursos):
     if not cursos:
         print("No hay cursos registrados.")
     else:
         promedio = sum(nota for _, nota in cursos) / len(cursos)
         print(f"El promedio de notas es: {promedio:.2f}")
-        
+
+## Esta funcion hace sumatoria de los cursos aprobados que son mayaores a 60 y reprobados que son menores a 60 ##        
 def contar_aprobados_reprobados(cursos):
     if not cursos:
         print("No hay cursos registrados.")
@@ -37,7 +41,9 @@ def contar_aprobados_reprobados(cursos):
         reprobados = len(cursos) - aprobados
         print(f"Cursos aprobados: {aprobados}")
         print(f"Cursos reprobados: {reprobados}") 
-        
+
+## Esta funcion permite realizar una busqueda de forma lineal ##
+## lo que quiere decir que no importa si lo buscamos con mayusculas o minusculas ##        
 def buscar_curso(cursos):
     if not cursos:
         print("No hay cursos registrados.")
@@ -53,7 +59,9 @@ def buscar_curso(cursos):
             break
     if not encontrado:
         print(f"El curso no fue encontrado.")         
-        
+
+## En esta funcion podemos realizar cambios ##
+## Es decir si necesitamos cambiarle nombre o nota a nuestro curso ##        
 def actualizar_curso(cursos):
     if not cursos:
         print("No hay cursos registrados.")
@@ -78,6 +86,8 @@ def actualizar_curso(cursos):
     else:
         print("Opcion invalida.")
 
+## Esta funcion nos permite eliminar una nota registrada con su respectiva nota ##
+## Pero no sin antes preguntarle al usuario si en realidad debe eliminar el curso ##
 def eliminar_curso(cursos):
     if not cursos:
         print("No hay cursos registrados.")
@@ -97,7 +107,9 @@ def eliminar_curso(cursos):
         else:
             print("Operacion Cancelada, no se elimino el curso.")
     else:
-        print("Opcion invalida.")            
+        print("Opcion invalida.")
+        
+# ========== Menu Principal ========== #                     
 
 def menu_principal():
     cursos = []
@@ -134,7 +146,7 @@ def menu_principal():
         elif opcion == "7":
             eliminar_curso(cursos)
         elif opcion == "13":
-            print("Saliendo del programa...")
+            print("Gracias por usar el Gestor de Notas Académicas. ¡Hasta pronto!")
             break
         else:
             print("Opcion invalida, intente nuevamente,")
