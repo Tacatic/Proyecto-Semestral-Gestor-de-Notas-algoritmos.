@@ -71,23 +71,17 @@ def actualizar_curso(cursos, historial):
     indice = input("Seleccione el numero del curso a actualizar:") 
     
     if indice.isdigit() and 1 <= int(indice) <= len(cursos):  
-        indice = int(indice) - 1
-        nuevo_nombre = input("Ingrese el nuevo nombre (Deje vacio si necesita mantener el nombre): ")
-        nueva_nota = input("Ingrese la nueva nota (0-100, deje vacio para mantener la nota) ")
-        
+        indice = int(indice) - 1     
         old_nombre, old_nota = cursos[indice]
-        nombre, nota = old_nombre, old_nota
-    
-        nombre, nota = cursos[indice]
-        if nuevo_nombre.strip():
-            nombre = nuevo_nombre
+        
+        nueva_nota = input("Ingrese la nueva nota (0-100, deje vacio para mantener la nota) ")
         if nueva_nota.isdigit() and 0 <= int(nueva_nota) <= 100:
             nota = int(nueva_nota)
-        
-        cursos[indice] = (nombre, nota)  
-        print("Curso actualizado con exito.")
-        
-        historial.append(f"Se Acualizo: {old_nombre} Nota anterior: ({old_nota}) - {nombre} Nueva nota: ({nota})")
+            cursos[indice] = (old_nombre, nota)
+            print("Curso actualizado con exito.")
+            historial.append(f"Se Acualizo la nota {old_nombre}: de ({old_nota}) a  Nueva nota: ({nota})")
+        else:
+            print("Nota invalida, la nota debe estar entre 0 y 100")
     else:
         print("Opcion invalida.")
 
@@ -124,7 +118,7 @@ def curso_nota(cursos):
         changed = False
         for i in range (n - 1):
             comps += 1
-            if cursos [i][1] > cursos [i+1][1]:
+            if cursos [i][1] < cursos [i+1][1]:  #solo cambiamos el signo mayo para hacerlo de forma ascendente
                 cursos [i], cursos[i+1] = cursos[i+1], cursos [i]
                 swaps += 1
                 changed = True
@@ -201,7 +195,7 @@ def revision_cola(cursos):
     else:
         print("\nProcesando solicitudes de revision")
         for curso in cola:
-            print(f"Revisando el curso {curso} ... (simulacion)")
+            print(f"Revisando el curso {curso}")
     print("\nTodas las solicitudes fueron atendidas")
     
 def mostrar_historial(historial):
