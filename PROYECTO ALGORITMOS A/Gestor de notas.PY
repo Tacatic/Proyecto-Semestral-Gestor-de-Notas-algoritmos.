@@ -1,6 +1,14 @@
+# ===== GESTOR DE NOTAS ===== #
+# =======================================================================
+# Este programa permite gestionar un listado de cursos con sus respectivas notas.
+# Incluye funcionalidades de resgitros, busquedas, actualizacion y eliminacion,
+# ordenamiento, porcentajes, simulacion de cola de revison y registro de historial.
+# =======================================================================
+
 # ===== FUNCIONES ===== #
 
 ## Esta funcion es para registrar un nuevo curso con su respectiva nota ##
+## Valida que el nombre no este vacio y que la nota sea entre 0 y 100. ##
 def registrar_curso(cursos):
     nombre = input("Ingrese el nombre del curso: ")
     while nombre.strip() == "":
@@ -15,7 +23,8 @@ def registrar_curso(cursos):
     cursos.append((nombre, int(nota)))
     print("Curso registrado con exito")
 
-## Esta funcion permite mostrar los cursos y notas que hemos registrado ##    
+## Esta funcion permite mostrar los cursos y notas que hemos registrado ##
+## Si la lista esta vacia, muestra un mensaje indicando que no hay registros. ##    
 def mostrar_cursos(cursos):
     if not cursos:
         print("No hay cursos registrados.")
@@ -109,7 +118,9 @@ def eliminar_curso(cursos, historial):
             print("Operacion Cancelada, no se elimino el curso.")
     else:
         print("Opcion invalida.")
-        
+
+## Esta funcion ordena los cursos por nota de forma descendente usando el algoritmo de burbuja ##
+## Tambien cuenta comparaciones y movimientos ##        
 def curso_nota(cursos):
     n = len(cursos)
     comps = swaps = 0
@@ -118,7 +129,7 @@ def curso_nota(cursos):
         changed = False
         for i in range (n - 1):
             comps += 1
-            if cursos [i][1] < cursos [i+1][1]:  #solo cambiamos el signo mayo para hacerlo de forma ascendente
+            if cursos [i][1] < cursos [i+1][1]:  # solo cambiamos el signo mayo para hacerlo de forma ascendente #
                 cursos [i], cursos[i+1] = cursos[i+1], cursos [i]
                 swaps += 1
                 changed = True
@@ -127,7 +138,9 @@ def curso_nota(cursos):
     print("\nCursos ordenados por nota")
     for i, (curso, nota) in enumerate(cursos, start=1):
         print(f"{i}. {curso} - Nota: {nota}") 
-    
+
+## Esta funcion ordena los cursos alfabeticamente por nombre usando insercion directa. ##
+## Ignora mayusculas y minusculas. ##    
 def curso_nombre(cursos):
     comps = moves = 0
     for i in range(1, len(cursos)):
@@ -147,7 +160,8 @@ def curso_nombre(cursos):
     for i, (curso, nota) in enumerate(cursos, start=1):
         print(f"{i}. {curso} - Nota: {nota}")  
         
-        
+## Esta funcion busca un curso por nombre mediante busqueda binaria. ##
+## Requiere que la lista este ordenada alfabeticamente por nombre. ##        
 def busqueda_binaria(cursos):
     if not cursos:
         print("No hay cursos registrados")
@@ -174,12 +188,14 @@ def busqueda_binaria(cursos):
     if not encontrado:
         print(f"\nEl curso {nombre_buscar} no fue encontrado")
 
+## Esta funcion simula una cola de solicitudes de revision. ##
+## Los cursos se agregan en orden y se processan uno por uno. ##
 def revision_cola(cursos):
     if not cursos:
         print("No hay cursos registrados")
         return
     
-    cola = []
+    cola = []       # Lista donde se almacena la simulacion de cola de revision.
     
     print("\nIngrese los cursos que desea enviar a revisión")
     print("Escriba fin para terminar\n")
@@ -197,19 +213,24 @@ def revision_cola(cursos):
         for curso in cola:
             print(f"Revisando el curso {curso}")
     print("\nTodas las solicitudes fueron atendidas")
-    
+
+## Esta funcion muestra el historial de cambios actualizaciones o eliminaciones. ##
+## Se muestran en orden inverso, del mas reciente al mas antiguo. ##    
 def mostrar_historial(historial):
     if not historial:
         print("\nNo hay cambios registrados en el historial")
     else:
         print("\nHistorial de cambios")      
         for i, cambio in enumerate(reversed(historial), start=1):
-            print(f"{i}. {cambio}")                                                            
-# ========== Menu Principal ========== #                     
+            print(f"{i}. {cambio}")
 
+
+# ========== Menu Principal ========== #   
+## controla el flujo del programa y permite al usuario seleccionar las disntintas opciones. ##
+## Cada numero ejecuta una funcion especifica del sitema. ##                  
 def menu_principal():
-    cursos = []
-    historial = []
+    cursos = []         # Lista donde se almacenan los cursos por nombre y nota. #
+    historial = []      # Lista donde se guardan los cambios realizados. #
     
     while True:
         print("\n=== MENÚ PRINCIPAL ===")
@@ -258,6 +279,8 @@ def menu_principal():
             break
         else:
             print("Opcion invalida, intente nuevamente,")
-            
+
+
+# ===== EJECUCION DEL PROGRAMA ===== #            
 menu_principal()                        
                 
