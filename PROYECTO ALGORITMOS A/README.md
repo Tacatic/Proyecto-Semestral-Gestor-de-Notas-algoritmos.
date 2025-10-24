@@ -10,6 +10,8 @@ EL proyecto no solo es solo para almacenar notas, sino para aplicar todo lo que 
 
 #### **REQUISITOS.**
 
+
+
 **Funcionales**
 
 * Registrar un curso y su nota.
@@ -23,3 +25,45 @@ EL proyecto no solo es solo para almacenar notas, sino para aplicar todo lo que 
 * Ver el historial de cambios (como una pila)
 * El programa se ejecuta desde consola.
 * No tiene interfaces graficas
+
+
+
+**No funcionales**
+
+
+
+* El programa se ejecuta desde consola.
+* No tiene interfaces graficas.
+
+
+
+**Reflexión personal.**
+
+El proyecto al final del día fue una enseñanza de aprendizaje bastante buena ya que no solo pude tener la ayuda del ingeniero si no que tambien hubieron personas que me enseñaban o mas
+
+bien me hacian entender mejor el funcionamiento, ya que para aprender nosotros mismo debemos poner de nuestra parte en practicar y tambien investigar, no quedarnos con que se hara, eso no lo he visto. Si no que por nuestros medios investiguemos y vayamos aprendiendo y solucionando errores.
+
+
+
+1. **¿Qué aprendí con este proyecto?**
+
+
+
+Realmente este proyecto me enseño a como usar las funciones y asi tener mi codigo mas ordena, facil de entender y facil de poder agregar o quitar cambios en algun futuro.
+
+
+
+**2. ¿Qué fue lo más desafiante de resolver?**
+
+
+
+Para mi lo mas desafiante fue realizar la funcion de historial de busqueda, porqué como tal no teniamos una base, tenia que ser investigado por nuestros medios.
+
+
+
+**3. ¿Qué mejoraría si tuviera más tiempo?**
+
+
+
+Como tal no seria mejorar si no que me gustaria haber usado como una base de datos para no perder el registro de nuestras notas y cursos.
+
