@@ -1,7 +1,5 @@
 #### **REDACCIÓN DEL PROBLEMA**
 
-
-
 El objetivo de este proyecto es desarrollar un sistema que pueda operar desde la consola (pantalla negra donde se escribe) para que un estudiante pueda registrar y gestionar sus calificaciones de manera organizada y practica de utilizar.
 
 Esto con el fin de llevar un buen control ya que muchas veces no llevamos un buen control de nuestras calificaciones. Este sistema busca ser una herramienta para que podamos guardar nuestras notas, verlas cuando queramos, saber si ganamos o no una materia, así Tambien actualizar algún dato si en dado caso nos hemos equivocado, Tambien podría eliminar cursos que ya no necesitemos y de igual manera poder calcular nuestro promedio.
@@ -12,11 +10,7 @@ EL proyecto no solo es solo para almacenar notas, sino para aplicar todo lo que 
 
 #### **REQUISITOS.**
 
-
-
 **Funcionales**
-
-
 
 * Registrar un curso y su nota.
 * Ver todos los cursos y sus notas.
@@ -27,19 +21,5 @@ EL proyecto no solo es solo para almacenar notas, sino para aplicar todo lo que 
 * Ordenar los cursos por nota (método burbuja)
 * Ordenar los cursos por nombre (método de insercción)
 * Ver el historial de cambios (como una pila)
-
-
-
-
-
-**No funcionales**
-
-
-
 * El programa se ejecuta desde consola.
 * No tiene interfaces graficas
-
-
-
-
-
